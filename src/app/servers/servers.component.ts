@@ -12,6 +12,8 @@ export class ServersComponent implements OnInit {
   serverCreated: boolean = false;
   username: string = '';
   servers = ['Testserver','Tesetserver 2'];
+  displayDetails: boolean = false;
+  clicklogs = [];
 
   constructor() { 
     setTimeout(() => {
@@ -30,5 +32,10 @@ export class ServersComponent implements OnInit {
 
   onUpdateServerName(event: Event){
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  onDisplayDetails(){
+    this.clicklogs.push( (new Date()).toLocaleTimeString() );
+    this.displayDetails = !this.displayDetails;
   }
 }

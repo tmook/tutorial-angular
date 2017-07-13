@@ -31,3 +31,8 @@
   >
   Reset User
 </button>
+
+
+<button class="btn btn-primary" (click)="onDisplayDetails()">Display Details</button>
+<p *ngIf="displayDetails">static paragraph</p>
+<p [ngStyle]="{backgroundColor: i>4 ? 'blue' : 'white'}" [ngClass]="{white:i>4}" *ngFor="let date of clicklogs; let i = index">button clicked at: {{date}}</p>
